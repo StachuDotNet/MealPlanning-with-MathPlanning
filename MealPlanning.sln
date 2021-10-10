@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "MP4MP", "MP4MP\MP4MP.fsproj", "{B5605F96-889E-4B1D-AC5C-72BDD7BA6992}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "MPDemo", "MPDemo\MPDemo.fsproj", "{705EE395-BE48-4C13-B3CC-2BCE2D572358}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B5605F96-889E-4B1D-AC5C-72BDD7BA6992}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5605F96-889E-4B1D-AC5C-72BDD7BA6992}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5605F96-889E-4B1D-AC5C-72BDD7BA6992}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5605F96-889E-4B1D-AC5C-72BDD7BA6992}.Release|Any CPU.Build.0 = Release|Any CPU
+		{705EE395-BE48-4C13-B3CC-2BCE2D572358}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{705EE395-BE48-4C13-B3CC-2BCE2D572358}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{705EE395-BE48-4C13-B3CC-2BCE2D572358}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{705EE395-BE48-4C13-B3CC-2BCE2D572358}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
