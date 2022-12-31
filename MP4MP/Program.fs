@@ -51,7 +51,7 @@ let constraints =
 
     let createNutrientConstraint nutrient =
         let expr = createNutrientExpr nutrient
-        let req = nutritionRequirements nutrient |> Option.defaultValue 0.0<Measures.Mass.mg> |> float
+        let req = nutritionRequirements nutrient 30 GenderStatus.Man 79.0 |> Option.defaultValue 0.0<Measures.Mass.mg> |> float
         let name = Nutrient.getName nutrient
         Constraint.create $"Min {req}mg {name}" (expr >== req)
         

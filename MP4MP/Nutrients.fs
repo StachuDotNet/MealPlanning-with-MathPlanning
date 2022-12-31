@@ -10,19 +10,8 @@ type Vitamin =
     | B3_Niacin
     | B5_Pantothenic_Acid
     | B6_Pyridoxine
+    | B7_Biotin
     | Folate
-//with this.ToString() =
-//    match this with
-//    | Vitamin_A -> "Vitamin A"
-//    | Vitamin_C -> "Vitamin C"
-//    | Vitamin_E -> "Vitamin E"
-//    | Vitamin_K -> "Vitamin K"
-//    | B1_Thiamin -> "B1 Thiamin"
-//    | B2_Riboflavin -> "B2 Riboflavin"
-//    | B3_Niacin -> "B3 Niacin"
-//    | B5_Pantothenic_Acid -> "B5 Pantothenic Acid"
-//    | B6_Pyridoxine -> "B6 Pyridoxine"
-//    | Folate -> "Folate"
     
 module Vitamin =
     let getName vitamin =
@@ -36,6 +25,7 @@ module Vitamin =
         | B3_Niacin -> "B3 Niacin"
         | B5_Pantothenic_Acid -> "B5 Pantothenic Acid"
         | B6_Pyridoxine -> "B6 Pyridoxine"
+        | B7_Biotin -> "B7 Biotin"
         | Folate -> "Folate"
 type Mineral =
     | Calcium
