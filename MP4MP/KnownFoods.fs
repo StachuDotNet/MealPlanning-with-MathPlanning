@@ -1,8 +1,20 @@
-module DataEntry.KnownFoods
+module MP4MP.KnownFoods
 
-open DataEntry.Measures
-open DataEntry.Nutrients
-open DataEntry.RawInputTypes
+open MP4MP.Measures
+open MP4MP.Nutrients
+
+[<CLIMutable>]
+type RawServingSizeData =
+  { Volume: string
+    Mass: string
+    Calories: int }
+
+[<CLIMutable>]
+type RawInputFood =
+  { Name: string
+    CategoryName: string
+    ServingSizeData: RawServingSizeData
+    FoodNutrition: string array }
 
 type NutrientInFood =
     { Nutrient: Nutrient
@@ -25,7 +37,7 @@ let parseFood (rawFood: RawInputFood) =
             let parts = s.Split " "
             
             if parts.Length < 3 then
-                printfn $"Couldn't parse {s}"
+                //printfn $"Couldn't parse {s}"
                 None
             else
                 { Nutrient = parts.[2..] |> String.concat " " |> Nutrient.parseNutrient
@@ -42,3 +54,15 @@ let parseFood (rawFood: RawInputFood) =
       CategoryName = rawFood.CategoryName
       ServingSizeData = servingSize
       FoodNutrition = nutrientsInFood }
+    
+    
+    
+let fileLocation = "/home/stachu/healthy-foods.json"
+
+open System.IO
+open System.Text.Json
+
+let foods =
+    File.ReadAllText fileLocation
+    |> JsonSerializer.Deserialize<RawInputFood array>
+    |> Seq.map parseFood

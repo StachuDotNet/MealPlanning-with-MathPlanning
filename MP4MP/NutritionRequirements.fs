@@ -1,7 +1,7 @@
-module DataEntry.NutrientRequirements
+module MP4MP.NutrientRequirements
 
-open DataEntry.Measures
-open DataEntry.Nutrients
+open MP4MP.Measures
+open MP4MP.Nutrients
 
 type GenderStatus =
     | Man
@@ -29,7 +29,7 @@ let nutritionRequirements (nutrient: Nutrient) = // (age: decimal) (genderStatus
     | Mineral Sodium -> None
     | Mineral Potassium -> None
     | Mineral Zinc -> None
-    | Mineral Copper -> 900.0<Mass.mg> |> Some
+    | Mineral Copper -> 900.0<Mass.mcg> |> Mass.mcg.toMilligrams |> Some
     | Mineral Iodine -> None
     | Mineral Iron -> 8.0<Mass.mg> |> Some
     | Mineral Magnesium -> None

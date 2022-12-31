@@ -1,34 +1,25 @@
-open System.IO
-open System.Text.Json
-open DataEntry
-open DataEntry.KnownFoods
-open DataEntry.NutrientRequirements
-open DataEntry.Nutrients
-open DataEntry.RawInputTypes
+open MP4MP
+open MP4MP.Util
+open MP4MP.KnownFoods
+open MP4MP.NutrientRequirements
+open MP4MP.Nutrients
 
-let fileLocation = "/home/stachu-locai/Data/healthy-foods.json"
 
-let foods =
-    File.ReadAllText fileLocation
-    |> JsonSerializer.Deserialize<RawInputFood array>
-
-let printList heading list =
-    printfn "%s: %A" heading (String.concat ", " list)
 
 let allCategories = foods |> Seq.map(fun f -> f.CategoryName) |> Seq.distinct
 printList "Categories" allCategories
 
-let parsedFoods = foods |> Seq.map parseFood
 
 open Flips
 open Flips.Types
 
-let items = parsedFoods |> Seq.map (fun z -> z.Name) |> Seq.toList
+let items = foods |> Seq.map (fun z -> z.Name) |> Seq.toList
+
 let foodMap =
     items
     |> List.map(fun name ->
         name,
-        parsedFoods |> Seq.find(fun z -> z.Name = name)
+        foods |> Seq.find(fun z -> z.Name = name)
     )
     |> Map.ofList
 

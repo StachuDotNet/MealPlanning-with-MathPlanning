@@ -1,4 +1,4 @@
-module DataEntry.Nutrients
+module MP4MP.Nutrients
 
 type Vitamin = 
     | Vitamin_A
@@ -11,6 +11,19 @@ type Vitamin =
     | B5_Pantothenic_Acid
     | B6_Pyridoxine
     | Folate
+//with this.ToString() =
+//    match this with
+//    | Vitamin_A -> "Vitamin A"
+//    | Vitamin_C -> "Vitamin C"
+//    | Vitamin_E -> "Vitamin E"
+//    | Vitamin_K -> "Vitamin K"
+//    | B1_Thiamin -> "B1 Thiamin"
+//    | B2_Riboflavin -> "B2 Riboflavin"
+//    | B3_Niacin -> "B3 Niacin"
+//    | B5_Pantothenic_Acid -> "B5 Pantothenic Acid"
+//    | B6_Pyridoxine -> "B6 Pyridoxine"
+//    | Folate -> "Folate"
+    
 module Vitamin =
     let getName vitamin =
         match vitamin with
@@ -24,7 +37,6 @@ module Vitamin =
         | B5_Pantothenic_Acid -> "B5 Pantothenic Acid"
         | B6_Pyridoxine -> "B6 Pyridoxine"
         | Folate -> "Folate"
-
 type Mineral =
     | Calcium
     | Chromium
@@ -121,6 +133,8 @@ module Nutrient =
         | "Protein" -> Protein
         | "Tryptophan"  -> Tryptophan
         | other -> failwith $"Couldn't parse {other}"
+
+
 let allNutrients =
   [ Vitamin Vitamin_A
     Vitamin Vitamin_C
